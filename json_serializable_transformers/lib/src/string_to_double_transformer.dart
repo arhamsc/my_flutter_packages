@@ -1,9 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-///Implement this class transformer to convert a double type to String.
+///Implement this class transformer to convert a String type to double.
 ///
 ///
-///Example: 20.0 to "20.0"
+///Example: "20.0" to 20.0
 ///
 ///It can be used with `freezed` or `json_serializable` packages.
 ///

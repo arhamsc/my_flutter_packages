@@ -1,9 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-///Implement this class transformer to convert a String type to int.
+///Implement this class transformer to convert a int type to String.
 ///
 ///
-///Example: "20" to 20
+///Example: 20 to "20"
 ///
 ///It can be used with `freezed` or `json_serializable` packages.
 ///
@@ -13,18 +13,18 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 ///@freezed
 ///class MyFreezedClass {
 ///...
-///@StringToIntTransformer()
+///@IntToStringTransformer()
 ///Value property,
 ///...
 ///}
 ///```
 ///
-class StringToIntTransformer implements JsonConverter<int, String> {
-  const StringToIntTransformer();
+class IntToStringTransformer implements JsonConverter<String, int> {
+  const IntToStringTransformer();
 
   @override
-  int fromJson(String json) => int.parse(json);
+  String fromJson(int json) => json.toString();
 
   @override
-  String toJson(int object) => object.toString();
+  int toJson(String object) => int.parse(object);
 }

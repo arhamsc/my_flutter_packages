@@ -23,7 +23,7 @@ class IntToStringTransformer implements JsonConverter<String, int> {
   const IntToStringTransformer();
 
   @override
-  String fromJson(int json) => json.toString();
+  String fromJson(dynamic json) => json is String ? json : json.toString();
 
   @override
   int toJson(String object) => int.parse(object);

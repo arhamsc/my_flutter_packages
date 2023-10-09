@@ -26,5 +26,5 @@ class DynamicToStringTransformer implements JsonConverter<String, dynamic> {
   String fromJson(dynamic json) => json is String ? json : json.toString();
 
   @override
-  dynamic toJson(String object) => int.parse(object);
+  dynamic toJson(String object) => object.toString();
 }

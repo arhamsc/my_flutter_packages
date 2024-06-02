@@ -51,7 +51,6 @@ class SelectedFileTransformer
               ? XFile(
                   x["file"]["path"],
                   name: x["file"]["name"],
-                  length: x["file"]["length"],
                   mimeType: x["file"]["mimeType"],
                 )
               : null,
@@ -68,7 +67,6 @@ class SelectedFileTransformer
       "file" : {
         "path": e.file?.path,
         "name": e.file?.name,
-        "length": e.file?.length(),
         "mimeType" : e.file?.mimeType,
       },
       "url" : {

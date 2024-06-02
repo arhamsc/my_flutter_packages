@@ -33,6 +33,7 @@ import 'package:reactive_image_picker/reactive_image_picker.dart';
 ///}
 ///```
 ///
+///@deprecated
 class SelectedFileImageSerializer {
   static Future<List<SelectedFile>?> imageFromJson(dynamic json,
       {bool fromBase64 = false, String? filePath, e}) async {

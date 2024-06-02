@@ -48,8 +48,11 @@ class SelectedFileTransformer
 
         return SelectedFile.image(
           file: fileExists
-              ? File(
+              ? XFile(
                   x["file"]["path"],
+                  name: x["file"]["name"],
+                  length: x["file"]["length"],
+                  mimeType: x["file"]["mimeType"],
                 )
               : null,
           url: url?.toString(),
@@ -64,6 +67,9 @@ class SelectedFileTransformer
     return object.map((e) => {
       "file" : {
         "path": e.file?.path,
+        "name": e.file?.name,
+        "length": e.file?.length(),
+        "mimeType" : e.file?.mimeType,
       },
       "url" : {
         "url": e.url,

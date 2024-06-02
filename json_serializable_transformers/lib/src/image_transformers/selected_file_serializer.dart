@@ -44,28 +44,19 @@ class SelectedFileImageSerializer {
     if (fromBase64 && isImageDataUri(json)) {
       final path = await getAppPath();
 
-      File? doc = await File('$path/$filePath').create(
-        recursive: true,
-      );
-      doc = await doc.writeAsBytes(base64.decode(json));
-      return List<SelectedFile>.from(
-        [
-          SelectedFile.image(
-            file: doc,
-          ),
-        ],
-      );
-    }
-    final file = List<SelectedFile>.from(
-      (json["image"] as List<Object?>).map<SelectedFile>(
-        (x) => SelectedFile.image(
-          file: File(
-            (x ?? "") as String,
+      // XFile? doc = XFile('$path/$filePath');
+
+      final file = List<SelectedFile>.from(
+        (json["image"] as List<Object?>).map<SelectedFile>(
+          (x) => SelectedFile.image(
+            file: XFile(
+              (x ?? "") as String,
+            ),
           ),
         ),
-      ),
-    );
-    return file;
+      );
+      return file;
+    }
   }
 
   static Map<String, dynamic>? imageToJson(List<SelectedFile>? image) {

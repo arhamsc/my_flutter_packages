@@ -29,7 +29,7 @@ import 'package:reactive_image_picker/reactive_image_picker.dart';
 ///```
 ///
 class SelectedFileTransformer
-    extends JsonConverter<List<SelectedFile>, List<Map<String, dynamic>>> {
+    extends JsonConverter<List<SelectedFile>, List<dynamic>> {
   const SelectedFileTransformer();
 
   @override
@@ -57,7 +57,7 @@ class SelectedFileTransformer
   }
 
   @override
-  List<Map<String, dynamic>> toJson(List<SelectedFile> object) {
+  List<dynamic> toJson(List<SelectedFile> object) {
     return object.map((e) => {
       "file" : {
         "path": e.file?.path,

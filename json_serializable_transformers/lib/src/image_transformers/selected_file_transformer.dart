@@ -33,12 +33,7 @@ class SelectedFileTransformer
   const SelectedFileTransformer();
 
   @override
-  List<SelectedFile> fromJson(dynamic json) {
-    if (json == null) return [];
-
-    if (json is List<SelectedFile> || json is List<SelectedFile>?) {
-      return json;
-    }
+  List<SelectedFile> fromJson(List<dynamic> json) {
 
     final file = List<SelectedFile>.from(
       (json as List<Object?>).map<SelectedFile>((x) {

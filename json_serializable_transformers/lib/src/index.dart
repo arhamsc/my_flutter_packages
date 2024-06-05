@@ -8,5 +8,6 @@ export "numeric_transformers/double_to_int_transformer.dart";
 export "string_transformers/dynamic_to_string.dart";
 export "network_transformers/internet_address_transformer.dart";
 export "image_transformers/selected_file_transformer.dart";
+export "datetime_transformers/milli_to_date_time_transformer.dart";
 
 export "./utils/index.dart";

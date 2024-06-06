@@ -33,8 +33,16 @@ class SelectedFileTransformer
   const SelectedFileTransformer();
 
   @override
-  List<SelectedFile> fromJson(List<dynamic> json) {
-
+  List<SelectedFile> fromJson(dynamic json) {
+    if(json is String) {
+      final uri = Uri.tryParse(json);
+      return [
+        SelectedFile.image(
+          file: null,
+          url: uri?.toString(),
+        )
+      ];
+    }
     final file = List<SelectedFile>.from(
       (json as List<Object?>).map<SelectedFile>((x) {
         if (x is! Map<String, dynamic>) return SelectedFile.image(file: null, url: null);
